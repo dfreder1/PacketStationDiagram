@@ -1,0 +1,28 @@
+<html>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+
+    A diagram of my Packet Radio station at WA6L
+
+    <div class="mermaid">
+sequenceDiagram
+    RMS Winlink->>UZ7HO SoundModem Software TNC: AX.25 on TCP Port 8100 at 9600 bps
+    UZ7HO SoundModem Software TNC->>+Laptop Computer USB Device: Two audio tones at 1200 bps 
+    Laptop Computer USB Device->>+SDA50 Ext Sound Card: Two audio tones at 1200 bps on USB cable
+    SDA50 Ext Sound Card->>+Alinco DR135: Push-To-Talk
+    SDA50 Ext Sound Card->>+Alinco DR135: Leveled, Filtered two audio tones at 1200 bps on cable
+    Alinco DR135->>+Antenna: Amplified AFSK Radio Frequency
+    Antenna->>+Alinco DR135: AFSK Radio Frequency
+    Alinco DR135->>+SDA50 Ext Sound Card: Amplified audio tones at 1200 bps on cable
+    SDA50 Ext Sound Card->>+Laptop Computer USB Device: Leveled, Filtered two audio tones at 1200 bps on USB cable
+    Laptop Computer USB Device->>+UZ7HO SoundModem Software TNC: Two audio tones at 1200 bps 
+    UZ7HO SoundModem Software TNC->>+RMS Winlink: AX.25 on TCP Port 8100 at 9600 bps
+    </div>
+
+</body>
+</html>
+
+
